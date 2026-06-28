@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="Theme.TikTokStickers" parent="Theme.Material3.DayNight.NoActionBar">
+        <item name="colorPrimary">@color/tiktok_red</item>
+        <item name="colorPrimaryDark">@color/black</item>
+    </style>
+</resources>

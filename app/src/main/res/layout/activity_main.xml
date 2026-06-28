@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <WebView
+        android:id="@+id/webView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/stickerPanel"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="@drawable/panel_bg_rounded"
+        android:padding="16dp"
+        android:elevation="16dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="24dp">
+
+        <TextView
+            android:id="@+id/panelTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Stickers detectados: 0"
+            android:textColor="@android:color/white"
+            android:textStyle="bold"
+            android:textSize="14sp"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <ImageView
+            android:id="@+id/btnTogglePanel"
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:padding="4dp"
+            android:src="@android:drawable/arrow_down_float"
+            app:tint="@android:color/white"
+            android:background="?android:attr/selectableItemBackgroundBorderless"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toBottomOf="@id/panelTitle" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/stickerGrid"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginTop="8dp"
+            android:minHeight="80dp"
+            android:maxHeight="220dp"
+            app:layout_constraintTop_toBottomOf="@id/panelTitle"
+            app:layout_constraintHeight_min="80dp"
+            app:layout_constraintHeight_max="220dp" />
+
+        <Button
+            android:id="@+id/btnScan"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="Escanear Conversación"
+            android:backgroundTint="@color/tiktok_red"
+            android:textColor="@android:color/white"
+            app:layout_constraintTop_toBottomOf="@id/stickerGrid" />
+
+        <Button
+            android:id="@+id/btnAddToWhatsApp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="6dp"
+            android:text="Añadir a WhatsApp"
+            android:backgroundTint="@color/button_inactive"
+            android:textColor="@android:color/white"
+            android:enabled="false"
+            app:layout_constraintTop_toBottomOf="@id/btnScan" />
+
+        <TextView
+            android:id="@+id/signatureText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="2dp"
+            android:text="by zierow"
+            android:textColor="#B0B2C1"
+            android:textSize="10sp"
+            android:gravity="center"
+            app:layout_constraintTop_toBottomOf="@id/btnAddToWhatsApp" />
+
+        <ProgressBar
+            android:id="@+id/progressBar"
+            style="?android:attr/progressBarStyleHorizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:visibility="gone"
+            app:layout_constraintTop_toBottomOf="@id/signatureText" />
+
+        <TextView
+            android:id="@+id/statusText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:textColor="#B0B2C1"
+            android:textSize="12sp"
+            android:gravity="center"
+            app:layout_constraintTop_toBottomOf="@id/progressBar" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
